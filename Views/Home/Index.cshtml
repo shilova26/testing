@@ -1,0 +1,34 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Книжный магазин</title>
+</head>
+<body>
+    <div>
+        <h3>Подарочные карты/сертификаты</h3>
+        <table>
+            <tr>
+                <td><p>Название</p></td>
+                <td><p>Описание</p></td>
+                <td><p>Цена</p></td>
+                <td></td>
+            </tr>
+            @foreach (var f in ViewBag.Cards)
+            {
+                <tr>
+                    <td><p>@f.Name</p></td>
+                    <td><p>@f.Description</p></td>
+                    <td><p>@f.Price</p></td>
+                    <td><p><a href="/Home/Buy/@f.Id">Купить</a></p></td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>
